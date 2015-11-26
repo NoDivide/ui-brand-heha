@@ -1,7 +1,6 @@
 <img src="http://www.holidayextras.co.uk/images/heha/heha-logo.png" height="100">
 
 # UI Toolkit Theme for HEHA
----
 
 A set of HEHA! specific [less](http://lesscss.org/) variables to overbrand  [Bootstrap](http://getbootstrap.com) and the [UI-Toolkit](http://ui-toolkit.com) , complete with any brand specific additions and overrides.
 
@@ -12,7 +11,7 @@ Install Bootstrap, UI Toolkit & this theme
 npm install --save bootstrap holidayextras/ui-toolkit holidayextras/ui-theme-heha
 ```
 
-Import files into one application `.less` file
+Import files into one application `.less` file & compile
 ```less
 @import 'path/to/node_modules/bootstrap/less/bootstrap.less';
 @import 'path/to/node_modules/ui-toolkit/src/less/toolkit.less';
@@ -36,7 +35,7 @@ cd ui-brand-heha
 npm install
 ```
 
-### Viewing
+### Workflow
 
 To [compile](https://github.com/less/less-docs/blob/master/content/usage/command-line-usage.md), [watch](https://github.com/caseywebdev/watchy#readme) and [livereload](https://www.npmjs.com/package/livereload) the `less` and serve the `example/` directory on [http://localhost:3000](http://localhost:3000), run the following
 ```bash
