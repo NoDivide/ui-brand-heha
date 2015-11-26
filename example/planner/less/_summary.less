@@ -1,0 +1,52 @@
+.trip-summary {
+  overflow: hidden;
+
+  padding-top: 20px;
+  min-height: 62.55%;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Countdown
+  .component-countdown {
+    font-family: @headings-font-family;
+    display:table;
+    display:flex;
+    justify-content:space-around;
+    width:100%;
+    font-size: @font-size-h3;
+    > div {
+      display:table-cell;
+      text-align:center;
+      small {
+        font-family: @font-family-sans-serif;
+        font-size: @font-size-small;
+        display:block;
+        padding-left: 0;
+      }
+    }
+  }
+  @media (min-width: @screen-sm-min) {
+    .component-countdown {
+      font-size: @font-size-h2;
+    }
+  }
+  @media (min-width: @screen-md-min) {
+    .component-countdown {
+      font-size: @font-size-h1;
+      > div {
+        small {
+          font-size: @font-size-base;
+        }
+      }
+    }
+  }
+}

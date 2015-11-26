@@ -1,0 +1,32 @@
+.trip-weather {
+  display: table;
+  table-layout: fixed;
+  display: -webkit-flex;
+  display:flex;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+  color: @text-color;
+  margin: 2em auto 0;
+  text-align:center;
+  .component-weather {
+    display: table-cell;
+    width: 60px;
+    text-align:center;
+    div:before {
+      font-size: 56px;
+    }
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .trip-weather {
+    .component-weather {
+      width: 100px;
+      font-size: 1.4em;
+      text-align: center;
+      div:last-of-type {
+        font-size: .75em;
+      }
+    }
+  }
+}
