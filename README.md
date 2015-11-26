@@ -1,86 +1,66 @@
 <img src="http://www.holidayextras.co.uk/images/heha/heha-logo.png" height="100">
 
-UI Toolkit Theme for HEHA
+# UI Toolkit Theme for HEHA
 ---
 
-Requirements:
----
+A set of HEHA! specific [less](http://lesscss.org/) variables to overbrand  [Bootstrap](http://getbootstrap.com) and the [UI-Toolkit](http://ui-toolkit.com) , complete with any brand specific additions and overrides.
 
-* [Node.js v10+](http://nodejs.org/) ( For Application Development )
+## Using the theme in your application
 
+Install Bootstrap, UI Toolkit & this theme
+```bash
+npm install --save bootstrap holidayextras/ui-toolkit holidayextras/ui-theme-heha
+```
 
-Install:
----
+Import files into one application `.less` file
+```less
+@import 'path/to/node_modules/bootstrap/less/bootstrap.less';
+@import 'path/to/node_modules/ui-toolkit/src/less/toolkit.less';
+@import 'path/to/node_modules/ui-brand-heha/theme/theme.less';
 
-To develop this theme:
+// Project specific files
+@import 'path/to/your/application.less'
+```
+
+## Contributing to the theme
+
+### Requirements:
+
+* [Node.js](http://nodejs.org/)
+
+### Installation
 
 ```bash
-cd /path/to/themes
 git clone git@github.com:holidayextras/ui-brand-heha.git
 cd ui-brand-heha
 npm install
 ```
 
-To watch for `ui-brand-heha` changes and automatically rebuild while developing:
+### Viewing
 
+To [compile](https://github.com/less/less-docs/blob/master/content/usage/command-line-usage.md), [watch](https://github.com/caseywebdev/watchy#readme) and [livereload](https://www.npmjs.com/package/livereload) the `less` and serve the `example/` directory on [http://localhost:3000](http://localhost:3000), run the following
 ```bash
-cd /path/to/themes/ui-brand-heha
-grunt watch
+npm run example
 ```
 
-Configure AWS Settings:
----
+The above is broken down into the following commands:
 
-Once you have this theme installed, you will need to update the `aws.json` file with your AWS credentials and settings you wish applied for this theme.  The `aws.json` file is not included in the git repo and is cloned from `aws.json.dist` upon installation.
-
-Grunt Terminal Commands:
----
-
-#### Build for Distribution:
-
-The following command will compile Less Styles into a CSS files for Distribution.
-
-This command is run automatically if you are using `grunt watch`
-
+Compile `example/theme.less` to `example/theme.css`
 ```bash
-grunt build
+npm run example:less
 ```
 
-#### Create a Major Release:
-
-The following will:
-
-1. Increase the build's major number ( e.g. v __1__.2.3 => v __2__.0.0 )
-2. Build & Package Distribution Files
-3. Create Tag Branch & Perform a git commit
-4. Push `dist` files to AWS S3 bucket listed in `aws.json`
-
+Serve `example/` on [http://localhost:3000](http://localhost:3000)
 ```bash
-grunt release-major
+npm run example:serve
 ```
 
-#### Create a Minor Release:
-
-The following will:
-
-1. Increase the build's minor number ( e.g. v 1.__2__.3 => v 1.__3__.0 )
-2. Build & Package Distribution Files
-3. Create Tag Branch & Perform a git commit
-4. Push `dist` files to AWS S3 bucket listed in `aws.json`
-
+Watch for changes in `src/` and `example/theme.less` & recompile
 ```bash
-grunt release-minor
+npm run example:watch
 ```
 
-#### Create a Release Patch:
-
-The following will:
-
-1. Increase the build's patch number ( e.g. v 1.2.__3__ => v 1.2.__4__ )
-2. Build & Package Distribution Files
-3. Create Tag Branch & Perform a git commit
-4. Push `dist` files to AWS S3 bucket listed in `aws.json`
-
+Monitor files for changes and reload your web browser with [livereload]([livereload](https://www.npmjs.com/package/livereload)
 ```bash
-grunt release-patch
+npm run example:livereload
 ```
