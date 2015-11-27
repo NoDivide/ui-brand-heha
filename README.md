@@ -2,7 +2,7 @@
 
 # UI Toolkit Theme for HEHA
 
-A set of HEHA! specific [less](http://lesscss.org/) variables to overbrand  [Bootstrap](http://getbootstrap.com) and the [UI-Toolkit](http://ui-toolkit.com) , complete with any brand specific additions and overrides.
+A set of HEHA! specific [less](http://lesscss.org/) variables to overbrand  [Bootstrap](http://getbootstrap.com) and the [UI-Toolkit](http://ui-toolkit.com), complete with any brand specific additions and overrides.
 
 ## Using the theme in your application
 

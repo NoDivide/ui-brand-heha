@@ -267,25 +267,45 @@
               <a href="/users/edit?lang=en">Manage Account</a>
             </li>
             <li>
-              <a class="static-page" href="/about/privacy" data-track-name="privacyPolicy" data-track-location="footer">Privacy Policy</a>
+              <a nohref class="static-page" data-track-name="privacyPolicy" data-toggle="modal" data-target="#myModal" data-track-location="footer">Privacy Policy</a>
             </li>
             <li class="hidden-xs">
-              <a class="terms-modal" data-hxtrack-name="terms_and_conditions" data-track-name="terms_and_conditions" data-track-location="footer">Terms and Conditions</a>
+              <a class="terms-modal" data-hxtrack-name="terms_and_conditions" data-track-name="terms_and_conditions" data-toggle="modal" data-target="#myModal" data-track-location="footer">Terms and Conditions</a>
             </li>
             <li class="visible-xs">
-              <a href="#/about/terms" data-hxtrack-name="terms_and_conditions" data-track-name="terms_and_conditions" data-track-location="footer">Terms and Conditions</a>
+              <a nohref data-hxtrack-name="terms_and_conditions" data-track-name="terms_and_conditions" data-toggle="modal" data-target="#myModal" data-track-location="footer">Terms and Conditions</a>
             </li>
             <li class="hidden-xs">
-              <a class="free-if-link free-if-modal" data-track-name="freeIf" data-track-location="footer">Free If…</a>
+              <a nohref class="free-if-link free-if-modal" data-track-name="freeIf" data-toggle="modal" data-target="#myModal" data-track-location="footer">Free If…</a>
             </li>
             <li class="visible-xs">
-              <a class="free-if-link" href="#/about/freeif" data-track-name="freeIf" data-track-location="footer">Free If…</a>
+              <a nohref class="free-if-link" data-track-name="freeIf" data-toggle="modal" data-target="#myModal" data-track-location="footer">Free If…</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <div id="myModal" class="modal fade modal-hx">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal" data-hxtrack-name="dismiss-modal">
+            <span>close &times;</span>
+          </a>
+          <h2 class="modal-title">Our privacy policy</h2>
+        </div>
+        <div class="modal-body">
+          <h4>Heading</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolore nemo odit labore harum, magnam ea neque culpa ab qui magni facilis officia pariatur esse, facere totam, iusto ullam inventore.</p>
+          <h4>Heading</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam beatae dolores, reiciendis odio enim consequatur accusamus animi! Impedit aut magnam laboriosam, provident voluptas amet temporibus nulla incidunt, explicabo iure maiores?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Just here for prototype purposes -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
