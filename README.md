@@ -39,7 +39,7 @@ npm install
 
 To [compile](https://github.com/less/less-docs/blob/master/content/usage/command-line-usage.md), [watch](https://github.com/caseywebdev/watchy#readme) and [livereload](https://www.npmjs.com/package/livereload) the `less` and serve the `example/` directory on [http://localhost:3000](http://localhost:3000), run the following
 ```bash
-npm run example
+npm start
 ```
 
 The above is broken down into the following commands:

@@ -5,6 +5,7 @@
   "main": "src/theme/theme.less",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run example",
     "example": "npm run example:less && npm run example:serve & npm run example:watch & npm run example:livereload",
     "example:less": "lessc example/theme.less example/theme.css",
     "example:serve": "open http://localhost:3000; serve example/",
