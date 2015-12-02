@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run example",
     "example": "npm run example:less && npm run example:serve & npm run example:watch & npm run example:livereload",
-    "example:less": "lessc example/theme.less example/theme.css",
+    "example:less": "lessc example/app.less example/app.css",
     "example:serve": "open http://localhost:3000; serve example/",
-    "example:watch": "watchy -w src/,example/theme.less -- npm run example:less",
+    "example:watch": "watchy -w src/,example/app.less -- npm run example:less",
     "example:livereload": "livereload example/"
   },
   "repository": {
