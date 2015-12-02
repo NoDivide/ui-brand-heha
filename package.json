@@ -2,9 +2,15 @@
   "name": "ui-brand-heha",
   "version": "1.0.1",
   "description": "HEHA! Theme styles",
-  "main": "index.js",
+  "main": "src/theme/theme.less",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run example",
+    "example": "npm run example:less && npm run example:serve & npm run example:watch & npm run example:livereload",
+    "example:less": "lessc example/theme.less example/theme.css",
+    "example:serve": "open http://localhost:3000; serve example/",
+    "example:watch": "watchy -w src/,example/theme.less -- npm run example:less",
+    "example:livereload": "livereload example/"
   },
   "repository": {
     "type": "git",
@@ -15,10 +21,18 @@
     "brand",
     "less"
   ],
-  "author": "",
+  "author": "uxui@holidayextras.com",
   "license": "None",
   "bugs": {
     "url": "https://github.com/holidayextras/ui-brand-heha/issues"
   },
-  "homepage": "https://github.com/holidayextras/ui-brand-heha"
+  "homepage": "https://github.com/holidayextras/ui-brand-heha",
+  "devDependencies": {
+    "bootstrap": "^3.3.6",
+    "less": "^2.5.3",
+    "livereload": "^0.4.0",
+    "serve": "^1.4.0",
+    "ui-toolkit": "holidayextras/ui-toolkit#0.26.4",
+    "watchy": "^0.6.5"
+  }
 }

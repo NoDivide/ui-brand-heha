@@ -1,0 +1,27 @@
+.trip-itinerary {
+	text-align: center;
+	.list-group-item {
+		padding: @padding-base-vertical*4 @padding-base-horizontal;
+	}
+	.fa-check, .fa-times, .fa-warning {
+		font-size: 3em;
+		color: @link-color;
+	}
+	.panel-default {
+		border:none;
+		.panel-heading {
+			background: none;
+		}
+	}
+	.list-group-item {
+		h1, h2, h3,
+		.h1, .h2, .h3 {
+			margin-top: 0;
+		}
+	}
+}
+@media (min-width: @screen-sm-min) {
+	.trip-itinerary {
+		text-align: left;
+	}
+}
