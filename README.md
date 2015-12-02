@@ -59,7 +59,7 @@ Watch for changes in `src/` and `example/theme.less` & recompile
 npm run example:watch
 ```
 
-Monitor files for changes and reload your web browser with [livereload]([livereload](https://www.npmjs.com/package/livereload)
+Monitor files for changes and reload your web browser with [livereload](https://www.npmjs.com/package/livereload)
 ```bash
 npm run example:livereload
 ```
