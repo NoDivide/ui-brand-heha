@@ -1,0 +1,36 @@
+/**
+ * Site Header UI Styles
+ * ----------------------------------------//
+ */
+.site-header {
+    background-size: cover;
+    padding: @bsu 0 @bsu * 4;
+    position: relative;
+
+    .welcome {
+        padding: @bsu * 3 0 @bsu * 1.5;
+    }
+
+    * {
+        position: relative;
+        z-index: 2;
+    }
+}
+.site-header:after {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 60%,rgba(255,255,255,0.2) 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.site-header__logo {
+    height: 53px;
+    left: -@bsu * 6;
+    position: relative;
+    width: 81px;
+}

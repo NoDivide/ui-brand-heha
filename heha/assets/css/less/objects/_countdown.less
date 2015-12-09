@@ -2,9 +2,6 @@
  * Countdown Object
  * ----------------------------------------//
  */
-@text-shadow: 0 2px 4px rgba(0,0,0, 0.4);
-
-
 .countdown {
     list-style: none;
     margin: 0;
@@ -23,7 +20,7 @@
     border-radius: 10px;
     box-shadow: 0 6px 10px rgba(0,0,0, 0.3);
     margin-right: @bsu;
-    padding: @bsu - 10px @bsu @hsu;
+    padding: @hsu @hsu + @qsu @qsu;
     position: relative;
 }
 
@@ -39,9 +36,9 @@
     line-height: @countdown-digits-size;
     color: @countdown-text-color;
     position: absolute;
-    text-shadow: @text-shadow;
-    top: @bsu - 10px;
-    right: -@bsu + 1px;
+    text-shadow: @default-text-shadow;
+    top: @hsu;
+    right: -@bsu + 2px;
 }
 .countdown__item:last-of-type:after {
     display: none;
@@ -55,14 +52,13 @@
 .countdown__desc {
     display: block;
     text-align: center;
-    text-shadow: @text-shadow;
+    text-shadow: @default-text-shadow;
 }
 
 .countdown__digits {
     font-size: @countdown-digits-size;
     font-weight: @font-light;
     line-height: @countdown-digits-size;
-    padding-bottom: @hsu / 2;
 }
 
 .countdown__desc {
