@@ -3,3 +3,4 @@ npm-debug.log
 example/*.css
 heha/assets/css/*.css
 .idea
+src/vendor/*

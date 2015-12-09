@@ -6,6 +6,7 @@ var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 var gulp = require('gulp'),
     less = require('gulp-less'),
     autoprefix = new LessPluginAutoPrefix({ browsers: ["last 2 versions"] }),
+    concat = require('gulp-concat'),
     runSequence = require('run-sequence'),
     browserSync = require('browser-sync').create();
 
@@ -18,11 +19,21 @@ var url = 'http://heha.loc';
 var paths = {
     root: 'heha',
     assets: 'heha/assets',
+    vendor: 'src/vendor',
 
     styles: 'heha/assets/css',
     scripts: 'heha/assets/js',
     images:  'heha/assets/images'
 };
+
+
+/**
+ * JS dependencies installed by Bower and compiled into vendor.js
+ */
+var jsDependencies = [
+    paths.vendor + '/jquery/dist/jquery.min.js',
+    paths.vendor + '/jquery.fitvids/jquery.fitvids.js'
+];
 
 
 /**
@@ -39,7 +50,7 @@ gulp.task('default', function(cb)
  */
 gulp.task('run', function(cb)
 {
-    runSequence(['compile-less'], cb);
+    runSequence(['compile-less', 'combine-javascript-dependencies'], cb);
 });
 
 
@@ -57,6 +68,17 @@ gulp.task('compile-less', function()
 
 
 /**
+ * Combine js dependencies task
+ */
+gulp.task('combine-javascript-dependencies', function()
+{
+    return gulp.src(jsDependencies)
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest(paths.scripts));
+});
+
+
+/**
  * Watch task
  */
 gulp.task('watch', function()
@@ -67,6 +89,14 @@ gulp.task('watch', function()
     gulp.watch([paths.styles + '/**/*.less'], function(cb)
     {
         runSequence('compile-less');
+    });
+
+    /**
+     * Watch .less files
+     */
+    gulp.watch([paths.scripts + '/**/*.js'], function(cb)
+    {
+        runSequence('combine-javascript-dependencies');
     });
 });
 

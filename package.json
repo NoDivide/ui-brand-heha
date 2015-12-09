@@ -31,6 +31,7 @@
     "bootstrap": "^3.3.6",
     "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
     "gulp-less": "^3.0.5",
     "less": "^2.5.3",
     "less-plugin-autoprefix": "^1.5.1",
