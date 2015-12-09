@@ -1,0 +1,73 @@
+/**
+ * Countdown Object
+ * ----------------------------------------//
+ */
+@text-shadow: 0 2px 4px rgba(0,0,0, 0.4);
+
+
+.countdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/**
+ * Countdown item
+ */
+.countdown__item {
+    display: inline-block;
+    color: @countdown-text-color;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(255,255,255,0.2) 100%), fade(@countdown-bg-color, 20%);
+    border: 2px solid @countdown-border-color;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0,0,0, 0.3);
+    margin-right: @bsu;
+    padding: @bsu - 10px @bsu @hsu;
+    position: relative;
+}
+
+
+/**
+ * Countdown colons between items (hidden on the last item)
+ */
+.countdown__item:after {
+    display: block;
+    content: ":";
+    font-size: @countdown-digits-type-size;
+    font-weight: @font-light;
+    line-height: @countdown-digits-type-size;
+    color: @countdown-text-color;
+    position: absolute;
+    text-shadow: @text-shadow;
+    top: @bsu - 10px;
+    right: -@bsu + 1px;
+}
+.countdown__item:last-of-type:after {
+    display: none;
+}
+
+
+/**
+ * Countdown digits and descriptions e.g. 20 Days, 03 Hours etc.
+ */
+.countdown__digits,
+.countdown__desc {
+    display: block;
+    text-align: center;
+    text-shadow: @text-shadow;
+}
+
+.countdown__digits {
+    font-size: @countdown-digits-type-size;
+    font-weight: @font-light;
+    line-height: @countdown-digits-type-size;
+    padding-bottom: @hsu / 2;
+}
+
+.countdown__desc {
+    font-size: @countdown-desc-type-size;
+    font-weight: @font-medium;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
