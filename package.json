@@ -5,12 +5,12 @@
   "main": "src/theme/theme.less",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run heha",
-    "heha": "npm run heha:less && npm run heha:serve & npm run heha:watch & npm run heha:livereload",
-    "heha:less": "lessc heha/assets/css/app.less heha/assets/css/app.css",
-    "heha:serve": "open http://localhost:3000; serve heha/",
-    "heha:watch": "watchy -w src/,heha/app.less -- npm run heha:less",
-    "heha:livereload": "livereload heha/"
+    "start": "npm run example",
+    "example": "npm run example:less && npm run example:serve & npm run example:watch & npm run example:livereload",
+    "example:less": "lessc example/assets/css/app.less example/assets/css/app.css",
+    "example:serve": "open http://localhost:3000; serve example/",
+    "example:watch": "watchy -w src/,example/app.less -- npm run example:less",
+    "example:livereload": "livereload example/"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,14 @@
   "homepage": "https://github.com/holidayextras/ui-brand-heha",
   "devDependencies": {
     "bootstrap": "^3.3.6",
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.5",
+    "gulp-sourcemaps": "^1.6.0",
     "less": "^2.5.3",
+    "less-plugin-autoprefix": "^1.5.1",
     "livereload": "^0.4.0",
+    "run-sequence": "^1.1.5",
     "serve": "^1.4.0",
     "ui-toolkit": "holidayextras/ui-toolkit#0.26.4",
     "watchy": "^0.6.5"
