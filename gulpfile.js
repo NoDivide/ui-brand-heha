@@ -6,7 +6,6 @@ var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 var gulp = require('gulp'),
     less = require('gulp-less'),
     autoprefix = new LessPluginAutoPrefix({ browsers: ["last 2 versions"] }),
-    sourceMaps = require('gulp-sourcemaps'),
     runSequence = require('run-sequence'),
     browserSync = require('browser-sync').create();
 
