@@ -1,0 +1,172 @@
+/**
+ * Itinerary Object
+ * ----------------------------------------//
+ */
+.itinerary {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .highlight {
+        color: @brand-2;
+    }
+
+    .flight-delayed {
+        color: @brand-2;
+        font-style: italic;
+        font-size: @itinerary-size;
+        font-weight: @font-bold;
+        padding-left: @qsu;
+        position: relative;
+        text-transform: uppercase;
+        top: -3px;
+
+        .icon {
+            font-size: @itinerary-flight-delay-icon-size;
+            padding-right: @qsu;
+            position: relative;
+            top: 3px;
+        }
+    }
+}
+
+
+/**
+ * Itinerary item
+ */
+.itinerary__item {
+    border-top: 5px solid mix(#FFF, @brand-1, 30%);
+    font-size: @itinerary-size;
+    padding: @bsu @hsu @bsu 0;
+    position: relative;
+}
+.itinerary__item:last-of-type {
+    border-bottom: 5px solid rgba(255,255,255, 0.3);
+}
+
+
+/**
+ * Itinerary item modifiers
+ */
+.itinerary__item--active {
+    background: transparent url(../images/site/itinerary__item--active.jpg) left top repeat;
+
+    .itinerary__status:after {
+        background-color: @itinerary-status-active-color;
+    }
+}
+.itinerary__item--inactive {
+
+    .itinerary__icon,
+    .itinerary__details {
+        opacity: 0.5;
+    }
+
+    .itinerary__status:after {
+        background-color: @itinerary-status-inactive-color;
+    }
+}
+
+
+/**
+ * Item status (tick or cross)
+ */
+.itinerary__status {
+    text-align: center;
+
+    .icon {
+        font-size: @itinerary-status-icon-size;
+        position: relative;
+        z-index: 2;
+    }
+}
+.itinerary__status:after {
+    border-bottom: 5px solid fade(#FFF, 30%);
+    content: "";
+    display: block;
+    height: 100% + 3.5px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 90px;
+    z-index: 1;
+}
+.itinerary__item:first-of-type .itinerary__status:after {
+    border-top: 5px solid fade(#FFF, 30%);
+    height: 100% + 7px;
+    top: -5px;
+}
+
+
+/**
+ * Itinerary item type icon
+ */
+.itinerary__icon {
+    font-size: @itinerary-icon-size;
+    text-align: center;
+}
+
+
+/**
+ * Itinerary item details
+ */
+.itinerary__details {
+
+    p {
+        margin-bottom: 0;
+    }
+}
+.itinerary__title {
+    font-size: @itinerary-title-size;
+    font-weight: @font-light;
+    margin-bottom: @qsu;
+}
+
+
+/**
+ * Itinerary item actions
+ */
+.itinerary__action {
+    text-align: right;
+}
+.itinerary__reference,
+.itinerary__price {
+    font-size: @itinerary-action-size;
+    font-weight: @font-light;
+
+    span {
+        opacity: 0.5;
+    }
+}
+.itinerary__reference {
+    background-color: @brand-1;
+    border-radius: 40px;
+    display: inline-block;
+    padding: @hsu * 1.5 @bsu;
+}
+.itinerary__price {
+    margin-bottom: @qsu;
+}
+
+
+/**
+ * FLexbox styles (grouped separately for clarity)
+ */
+.itinerary__item {
+    align-items: center;
+    display: flex;
+}
+.itinerary__status {
+    width: 90px;
+}
+.itinerary__icon {
+    width: 100px;
+}
+.itinerary__details {
+    flex-basis: 55%;
+    flex-grow: 2;
+}
+.itinerary__action {
+    flex-basis: 25%;
+    flex-grow: 2;
+}
