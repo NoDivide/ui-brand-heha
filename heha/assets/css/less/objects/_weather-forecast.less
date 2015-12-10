@@ -1,0 +1,43 @@
+/**
+ * Weather Forecast Object
+ * ----------------------------------------//
+ */
+.weather-forecast {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.weather-forecast:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+/**
+ * Weather forcast day
+ */
+.weather-forecast__day {
+    color: @brand-1;
+    display: block;
+    float: left;
+    text-align: center;
+    width: 20%;
+
+    .icon {
+        display: block;
+        font-size: @weather-forcast-icon-size;
+        margin-bottom: @hsu;
+    }
+}
+.weather-forecast__name {
+    border: 1px solid @brand-1;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: @hsu;
+    padding: @qsu / 2 @hsu @qsu / 2 - 2px;
+    text-transform: uppercase;
+}
+.weather-forecast__temp {
+    display: block;
+    font-size: @weather-forcast-temp-size;
+}

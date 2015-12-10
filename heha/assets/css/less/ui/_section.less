@@ -5,10 +5,30 @@
 .section {
     padding: @bsu * 2.5 0;
 }
+
+
+/**
+ * Section modifiers
+ */
+.section--tight {
+    padding: @bsu 0;
+}
+
+
+/**
+ * Section color modifiers
+ */
+.section--white {
+    background-color: #FFF;
+}
 .section--zebra {
     background-color: lighten(@brand-1, 6%);
 }
 
+
+/**
+ * Section header
+ */
 .section__header {
     font-size: @section-header-size;
     margin-bottom: @bsu * 2;
@@ -17,7 +37,6 @@
         margin: @qsu 0;
     }
 }
-
 .section__title {
     font-size: @section-title-size;
     font-weight: @font-bold;
