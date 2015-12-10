@@ -7,18 +7,23 @@
     margin: 0;
     padding: 0;
 }
-
+.countdown:after {
+    clear: both;
+    content: "";
+    display: block;
+}
 
 /**
  * Countdown item
  */
 .countdown__item {
-    display: inline-block;
-    color: @countdown-text-color;
     background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(255,255,255,0.2) 100%), fade(@countdown-bg-color, 20%);
     border: 2px solid @countdown-border-color;
     border-radius: 10px;
     box-shadow: 0 6px 10px rgba(0,0,0, 0.3);
+    color: @countdown-text-color;
+    display: block;
+    float: left;
     margin-right: @bsu;
     padding: @hsu @hsu + @qsu @qsu;
     position: relative;
@@ -38,7 +43,7 @@
     position: absolute;
     text-shadow: @default-text-shadow;
     top: @hsu;
-    right: -@bsu + 2px;
+    right: -@bsu + 4px;
 }
 .countdown__item:last-of-type:after {
     display: none;
