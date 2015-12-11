@@ -1,0 +1,65 @@
+/**
+ * IE9 specific style fixes
+ * ----------------------------------------//
+ */
+
+/**
+ * Site header (see /ui/_site-header.less)
+ */
+.ie9 .site-header:after {
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+/**
+ * Countdown (see /object/_countdown.less)
+ */
+.ie9 .countdown__item {
+    background-color: rgba(0,0,0, 0.3);
+}
+
+
+/**
+ * Itinerary (see /object/_itinerary.less)
+ */
+.ie9 .itinerary__item {
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-md-min) {
+        display: table;
+    }
+}
+
+.ie9 .itinerary__status,
+.ie9 .itinerary__icon,
+.ie9 .itinerary__details,
+.ie9 .itinerary__action {
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-md-min) {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+.ie9 .itinerary__icon {
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-md-min) {
+        width: 15%;
+    }
+}
+.ie9 .itinerary__action {
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-md-min) {
+        width: 25%;
+    }
+}

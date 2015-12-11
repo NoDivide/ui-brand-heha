@@ -57,7 +57,6 @@
  * Itinerary item
  */
 .itinerary__item {
-    align-items: center;
     border-top: 5px solid mix(#FFF, @brand-1, 30%);
     font-size: @itinerary-size * .75;
     padding: @hsu @hsu @hsu 0;
@@ -71,6 +70,7 @@
         font-size: @itinerary-size;
     }
     @media (min-width: @screen-md-min) {
+        align-items: center;
         display: flex;
         padding: @bsu @hsu @bsu 0;
     }
@@ -256,6 +256,7 @@
  */
 .itinerary__action {
     display: block;
+    white-space: nowrap;
     text-align: right;
     width: 100%;
 
@@ -264,10 +265,6 @@
      * Media query adjustments
      */
     @media (min-width: @screen-sm-min) {
-        flex-basis: 25%;
-        flex-grow: 2;
-    }
-    @media (min-width: @screen-lg-min) {
         flex-basis: 25%;
         flex-grow: 2;
     }
