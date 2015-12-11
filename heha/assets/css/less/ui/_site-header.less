@@ -30,7 +30,7 @@
 
 .site-header__logo {
     height: 53px;
-    left: -@bsu * 6;
+    left: -2px;
     position: relative;
     width: 81px;
 
@@ -42,5 +42,9 @@
     a:hover {
         border: none;
         padding-bottom: 0;
+    }
+
+    @media (min-width: @screen-md-min) {
+        left: -12%;
     }
 }
