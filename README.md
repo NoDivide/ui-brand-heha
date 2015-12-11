@@ -77,25 +77,27 @@ Optionally, [Gulp](http://gulpjs.com) is included with this theme, along with a 
 
 To take advantage of Gulp simple run:
 
-```gulp```
+    gulp
 
 [Bower](http://bower.io) is also included to handle front-end package dependencies. Currently limited to javascript dependencies for this theme.
 
 To include a new package run:
 
-```bower install name-of-package —save-dev```
+    bower install name-of-package --save-dev
 
 Bower packages are downloaded into `/src/vendor`. To include the package in the theme, edit the `gulpfile.js`, locate the `jsDependencies` array and add the path to the file e.g.:
 
-```var jsDependencies = [
-    paths.vendor + ‘/jquery/dist/jquery.min.js’,
-    paths.vendor + ‘/jquery.fitvids/jquery.fitvids.js’
-];```
+    var jsDependencies = [
+        paths.vendor + ‘/jquery/dist/jquery.min.js’,
+        paths.vendor + ‘/jquery.fitvids/jquery.fitvids.js’
+    ];
 
 Finally run:
 
-```gulp run```
+    gulp run
 
 Gulp combines all the javascript dependencies into a single file in the theme folder: `assets/js/vendor.js`
+
+Contact [Ryan taylor](ryan@nodividestudio.com) for any queries about the Gulp setup for this theme.
 
 
