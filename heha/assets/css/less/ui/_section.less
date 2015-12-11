@@ -3,7 +3,14 @@
  * ----------------------------------------//
  */
 .section {
-    padding: @bsu * 2.5 0;
+    padding: @bsu * 1.25 0;
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        padding: @bsu * 2.5 0;
+    }
 }
 
 
@@ -11,7 +18,15 @@
  * Section modifiers
  */
 .section--tight {
-    padding: @bsu 0;
+    padding: @hsu 0;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        padding: @bsu 0;
+    }
 }
 
 
@@ -30,18 +45,43 @@
  * Section header
  */
 .section__header {
-    font-size: @section-header-size;
-    margin-bottom: @bsu * 2;
+    font-size: @section-header-size * .625;
+    margin-bottom: @bsu;
     
     p {
         margin: @qsu 0;
     }
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @section-header-size * .75;
+        margin-bottom: @bsu * 2;
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @section-header-size;
+    }
 }
 .section__title {
-    font-size: @section-title-size;
+    font-size: @section-title-size * .625;
     font-weight: @font-bold;
 
     // Fix spacing issue on font rendering
     position: relative;
     left: -1px;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @section-title-size * .75;
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @section-title-size;
+    }
 }
