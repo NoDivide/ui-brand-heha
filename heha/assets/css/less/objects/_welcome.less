@@ -3,26 +3,54 @@
  * ----------------------------------------//
  */
 .welcome {
-    font-size: @welcome-size;
+    font-size: @welcome-size * .625;
     text-shadow: @default-text-shadow;
 
     p {
-        margin-bottom: @bsu;
+        margin-bottom: @hsu;
+    }
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @welcome-size * .75;
+
+        p {
+            margin-bottom: @bsu;
+        }
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @welcome-size;
     }
 }
 
 .welcome__greeting {
-    font-size: @welcome-greeting-size;
+    font-size: @welcome-greeting-size * .625;
     margin-bottom: @qsu;
     text-shadow: @default-text-shadow;
 
     // Fix spacing issue on font rendering
     position: relative;
     left: -2px;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @welcome-greeting-size * .75;
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @welcome-greeting-size;
+    }
 }
 
 .welcome__destination {
-    font-size: @welcome-destination-size;
+    font-size: @welcome-destination-size * .5;
     font-weight: @font-bold;
     margin-bottom: @qsu;
     text-shadow: @default-text-shadow;
@@ -30,9 +58,33 @@
     // Fix spacing issue on font rendering
     position: relative;
     left: -7px;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @welcome-destination-size * .75;
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @welcome-destination-size;
+    }
 }
 
 .welcome__dates {
-    font-size: @welcome-dates-size;
+    font-size: @welcome-dates-size * .625;
     text-shadow: @default-text-shadow;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @welcome-dates-size * .75;
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @welcome-dates-size;
+    }
 }

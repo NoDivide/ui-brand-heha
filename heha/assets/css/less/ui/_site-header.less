@@ -4,16 +4,32 @@
  */
 .site-header {
     background-size: cover;
-    padding: @bsu 0 @bsu * 4;
+    padding: @bsu 0 @bsu * 2;
     position: relative;
 
     .welcome {
-        padding: @bsu * 3 0 @bsu * 1.5;
+        padding: @bsu * 1.5 0 @bsu * 0.75;
     }
 
     * {
         position: relative;
         z-index: 2;
+    }
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        padding: @bsu 0 @bsu * 4;
+
+        .welcome {
+            padding: @bsu * 3 0 @bsu * 1.5;
+        }
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @welcome-size;
     }
 }
 .site-header:after {
