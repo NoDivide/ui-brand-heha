@@ -24,9 +24,28 @@
     color: @countdown-text-color;
     display: block;
     float: left;
-    margin-right: @bsu;
-    padding: @hsu @hsu + @qsu @qsu;
+    margin-right: @hsu;
+    min-width: 58px;
+    padding: @qsu @qsu * .75 @qsu;
     position: relative;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        margin-right: @hsu * 1.5;
+        padding: @hsu @hsu @hsu;
+        min-width: 100px;
+    }
+
+    @media (min-width: @screen-md-min) {
+        margin-right: @bsu;
+        padding: @hsu @hsu * 1.5 @hsu * 1.5;
+    }
+}
+.countdown__item:last-of-type {
+    margin-right: 0;
 }
 
 
@@ -36,14 +55,32 @@
 .countdown__item:after {
     display: block;
     content: ":";
-    font-size: @countdown-digits-size;
+    font-size: @countdown-digits-size * .33;
     font-weight: @font-light;
-    line-height: @countdown-digits-size;
+    line-height: @countdown-digits-size * .33;
     color: @countdown-text-color;
     position: absolute;
     text-shadow: @default-text-shadow;
-    top: @hsu;
-    right: -@bsu + 4px;
+    top: @qsu;
+    right: -@qsu - 6px;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @countdown-digits-size * .5;
+        line-height: @countdown-digits-size * .5;
+        top: @hsu;
+        right: -@hsu * 1.5 + 5px;
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @countdown-digits-size;
+        line-height: @countdown-digits-size;
+        top: @hsu;
+        right: -@bsu + 4px;
+    }
 }
 .countdown__item:last-of-type:after {
     display: none;
@@ -61,14 +98,44 @@
 }
 
 .countdown__digits {
-    font-size: @countdown-digits-size;
+    font-size: @countdown-digits-size * .33;
     font-weight: @font-light;
-    line-height: @countdown-digits-size;
+    line-height: @countdown-digits-size * .33;
+    margin-bottom: @qsu * .5;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @countdown-digits-size * .5;
+        line-height: @countdown-digits-size * .5;
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @countdown-digits-size;
+        line-height: @countdown-digits-size;
+    }
 }
 
 .countdown__desc {
-    font-size: @countdown-desc-size;
+    font-size: @countdown-desc-size * .5;
     font-weight: @font-medium;
+    line-height: @countdown-desc-size * .5;
     letter-spacing: 2px;
     text-transform: uppercase;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @countdown-desc-size * .75;
+        line-height: @countdown-desc-size * .75;
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @countdown-desc-size;
+        line-height: @countdown-desc-size;
+    }
 }
