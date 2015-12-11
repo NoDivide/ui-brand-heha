@@ -25,19 +25,60 @@
 
     .icon {
         display: block;
-        font-size: @weather-forcast-icon-size;
-        margin-bottom: @hsu;
+        font-size: @weather-forcast-icon-size * .75;
+        margin-bottom: @qsu;
+    }
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+
+        .icon {
+            font-size: @weather-forcast-icon-size;
+            margin-bottom: @hsu;
+        }
+    }
+
+    @media (min-width: @screen-md-min) {
     }
 }
 .weather-forecast__name {
     border: 1px solid @brand-1;
     border-radius: 20px;
     display: inline-block;
-    margin-bottom: @hsu;
-    padding: @qsu / 2 @hsu @qsu / 2 - 2px;
+    font-size: @weather-forcast-name-size * .625;
+    margin-bottom: @qsu;
+    padding: @qsu * .25 @hsu * .75 @qsu * .25 - 2px;
     text-transform: uppercase;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @weather-forcast-name-size * .75;
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @weather-forcast-name-size;
+        margin-bottom: @hsu;
+        padding: @qsu * .5 @hsu @qsu * .5 - 2px;
+    }
 }
 .weather-forecast__temp {
     display: block;
-    font-size: @weather-forcast-temp-size;
+    font-size: @weather-forcast-temp-size * .75;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @weather-forcast-temp-size;
+    }
 }

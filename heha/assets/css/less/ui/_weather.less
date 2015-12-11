@@ -3,23 +3,62 @@
  * ----------------------------------------//
  */
 .weather {
-    align-items: center;
-    display: flex;
 
     .weather-forecast {
-        float: left;
-        width: 75%;
+        clear: left;
+    }
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        align-items: center;
+        display: flex;
+
+        .weather-forecast {
+            clear: none;
+            float: left;
+            width: 72%;
+        }
     }
 }
 
 .weather__header {
     color: @brand-1;
-    float: left;
-    font-size: @weather-size;
-    width: 25%;
+    font-size: @weather-size * .625;
+    margin-bottom: @qsu;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        float: left;
+        width: 28%;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+    @media (min-width: @screen-md-min) {
+        font-size: @weather-size;
+        margin-bottom: 0;
+    }
 }
 .weather__title {
-    font-size: @weather-title-size;
+    font-size: @weather-title-size * .625;
     font-weight: @font-bold;
-    margin-bottom: @qsu;
+    margin-bottom: @qsu * .5;
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @weather-title-size * .75;
+        margin-bottom: @qsu;
+    }
+
+    @media (min-width: @screen-md-min) {
+        font-size: @weather-title-size;
+    }
 }
