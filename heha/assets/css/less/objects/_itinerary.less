@@ -12,20 +12,42 @@
     }
 
     .flight-delayed {
+        display: inline-block;
         color: @brand-2;
         font-style: italic;
-        font-size: @itinerary-size;
+        font-size: @itinerary-size * .75;
         font-weight: @font-bold;
-        padding-left: @qsu;
+        padding-top: @hsu;
         position: relative;
         text-transform: uppercase;
         top: -3px;
 
         .icon {
-            font-size: @itinerary-flight-delay-icon-size;
+            font-size: @itinerary-flight-delay-icon-size * .75;
             padding-right: @qsu;
             position: relative;
             top: 3px;
+        }
+    }
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+
+        .flight-delayed {
+            font-size: @itinerary-size;
+
+            .icon {
+                font-size: @itinerary-flight-delay-icon-size;
+            }
+        }
+    }
+    @media (min-width: @screen-md-min) {
+
+        .flight-delayed {
+            padding: 0 0 0 @qsu;
         }
     }
 }
@@ -35,10 +57,23 @@
  * Itinerary item
  */
 .itinerary__item {
+    align-items: center;
     border-top: 5px solid mix(#FFF, @brand-1, 30%);
-    font-size: @itinerary-size;
-    padding: @bsu @hsu @bsu 0;
+    font-size: @itinerary-size * .75;
+    padding: @hsu @hsu @hsu 0;
     position: relative;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @itinerary-size;
+    }
+    @media (min-width: @screen-md-min) {
+        display: flex;
+        padding: @bsu @hsu @bsu 0;
+    }
 }
 .itinerary__item:last-of-type {
     border-bottom: 5px solid rgba(255,255,255, 0.3);
@@ -74,11 +109,14 @@
  * Item status (tick or cross)
  */
 .itinerary__status {
+    float: left;
     text-align: center;
+    width: 35px;
 
     .icon {
-        font-size: @itinerary-status-icon-size;
+        font-size: @itinerary-status-icon-size * .625;
         position: relative;
+        top: @qsu;
         z-index: 2;
     }
 }
@@ -91,7 +129,7 @@
     left: 0;
     position: absolute;
     top: 5px;
-    width: 90px;
+    width: 35px;
     z-index: 1;
 }
 .itinerary__status:before {
@@ -100,11 +138,47 @@
     left: 0;
     position: absolute;
     top: 0;
-    width: 90px;
+    width: 35px;
 }
 .itinerary__item:first-of-type .itinerary__status:before {
     border-top: 5px solid fade(#FFF, 30%);
     top: -5px;
+}
+
+/**
+ * Item status (tick or cross) media query adjustments
+ */
+@media (min-width: @screen-sm-min) {
+    .itinerary__status {
+        width: 60px;
+
+        .icon {
+            top: auto;
+        }
+    }
+    .itinerary__status:after,
+    .itinerary__status:before {
+        width: 60px;
+    }
+    .itinerary__status:before {
+        width: 60px;
+    }
+}
+@media (min-width: @screen-lg-min) {
+    .itinerary__status {
+        width: 90px;
+
+        .icon {
+            top: auto;
+        }
+    }
+    .itinerary__status:after,
+    .itinerary__status:before {
+        width: 90px;
+    }
+    .itinerary__status:before {
+        width: 90px;
+    }
 }
 
 
@@ -112,8 +186,28 @@
  * Itinerary item type icon
  */
 .itinerary__icon {
-    font-size: @itinerary-icon-size;
-    text-align: center;
+    font-size: @itinerary-icon-size * .75;
+    text-align: left;
+    padding-left: 50px;
+    width: 50px;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        float: none;
+        padding-left: 75px;
+        text-align: center;
+        width: 75px;
+    }
+    @media (min-width: @screen-md-min) {
+        padding-left: 0;
+    }
+    @media (min-width: @screen-lg-min) {
+        font-size: @itinerary-icon-size;
+        width: 100px;
+    }
 }
 
 
@@ -121,15 +215,39 @@
  * Itinerary item details
  */
 .itinerary__details {
+    clear: left;
+    padding: @hsu 0 @hsu 50px;
+    width: 100%;
 
     p {
         margin-bottom: 0;
     }
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        padding-left: 75px;
+    }
+    @media (min-width: @screen-md-min) {
+        clear: none;
+        flex-basis: 55%;
+        flex-grow: 2;
+        padding: 0;
+    }
 }
 .itinerary__title {
-    font-size: @itinerary-title-size;
+    font-size: @itinerary-title-size * .75;
     font-weight: @font-light;
     margin-bottom: @qsu;
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-lg-min) {
+        font-size: @itinerary-title-size;
+    }
 }
 
 
@@ -137,46 +255,69 @@
  * Itinerary item actions
  */
 .itinerary__action {
+    display: block;
     text-align: right;
+    width: 100%;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        flex-basis: 25%;
+        flex-grow: 2;
+    }
+    @media (min-width: @screen-lg-min) {
+        flex-basis: 25%;
+        flex-grow: 2;
+    }
 }
 .itinerary__reference,
 .itinerary__price {
-    font-size: @itinerary-action-size;
+    font-size: @itinerary-action-size * .75;
     font-weight: @font-light;
 
     span {
         opacity: 0.5;
+    }
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @itinerary-action-size * .75;
+
+    }
+    @media (min-width: @screen-lg-min) {
+        font-size: @itinerary-action-size;
     }
 }
 .itinerary__reference {
     background-color: @brand-1;
     border-radius: 40px;
     display: inline-block;
-    padding: @hsu * 1.5 @bsu;
+    padding: @hsu * .75 @hsu;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-md-min) {
+        padding: @hsu @hsu * 1.5;
+    }
+    @media (min-width: @screen-lg-min) {
+        padding: @hsu * 1.5 @bsu;
+    }
 }
 .itinerary__price {
-    margin-bottom: @qsu;
-}
+    margin-bottom: @qsu * .5;
 
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        margin-bottom: @qsu;
 
-/**
- * FLexbox styles (grouped separately for clarity)
- */
-.itinerary__item {
-    align-items: center;
-    display: flex;
-}
-.itinerary__status {
-    width: 90px;
-}
-.itinerary__icon {
-    width: 100px;
-}
-.itinerary__details {
-    flex-basis: 55%;
-    flex-grow: 2;
-}
-.itinerary__action {
-    flex-basis: 25%;
-    flex-grow: 2;
+    }
 }
