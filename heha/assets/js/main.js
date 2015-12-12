@@ -11,4 +11,17 @@ $(document).ready(function()
     $(window).load(function() {
         $('#parking-confirmed').modal('show');
     });
+
+
+    /**
+     * Assuming the standby page will redirect to the
+     * confirmation modal I've added a timeout for
+     * demonstration purposes. (This is just and example).
+     */
+    if($('.js-redirect').length)
+    {
+        setTimeout(function() {
+            window.location.replace("/");
+        }, 10000);
+    }
 });

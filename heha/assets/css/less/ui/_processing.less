@@ -1,0 +1,41 @@
+/**
+ * Processing UI Element
+ * ----------------------------------------//
+ */
+.processing__header {
+    clear: left;
+    display: block;
+    position: relative;
+    text-align: center;
+    top: -83px;
+
+    p {
+        font-size: @processing-size * .75;
+        font-weight: @font-thin;
+    }
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        top: -150px;
+
+        p {
+            font-size: @processing-size;
+        }
+    }
+}
+.processing__title {
+    font-size: @processing-title-size * .75;
+    font-weight: @font-thin;
+    margin-bottom: @hsu;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @processing-title-size;
+    }
+}
