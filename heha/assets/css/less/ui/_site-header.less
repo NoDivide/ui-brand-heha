@@ -3,7 +3,6 @@
  * ----------------------------------------//
  */
 .site-header {
-    background-size: cover;
     padding: @bsu 0 @bsu * 2;
     position: relative;
 
@@ -32,7 +31,15 @@
         font-size: @welcome-size;
     }
 }
-.site-header:after {
+
+
+/**
+ * Site header image background modifier
+ */
+.site-header--img-bg {
+    background-size: cover;
+}
+.site-header--img-bg:after {
     background: linear-gradient(to bottom, rgba(0,0,0,0.5) 60%,rgba(255,255,255,0.2) 100%);
     content: "";
     display: block;
