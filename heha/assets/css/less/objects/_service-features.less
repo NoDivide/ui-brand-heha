@@ -1,0 +1,51 @@
+/**
+ * Service Features Object
+ * ----------------------------------------//
+ */
+.service-features {
+    .clearfix();
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.service-features__item {
+    float: left;
+    padding: @hsu 0;
+    text-align: center;
+    width: 33%;
+
+    .icon {
+        background-color: #FFF;
+        border-radius: 100px;
+        color: @brand-1;
+        display: inline-block;
+        font-size: @service-features-icon-size * .75;
+        padding: @bsu * .75;
+    }
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+
+        .icon {
+            font-size: @service-features-icon-size;
+        }
+    }
+}
+
+.service-features__body {
+    font-size: @service-features-body-size * .75;
+    font-weight: @font-regular;
+    padding: @qsu @qsu 0;
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @service-features-body-size;
+        padding: @qsu @bsu * .75 0;
+    }
+}

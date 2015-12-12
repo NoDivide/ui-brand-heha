@@ -1,0 +1,44 @@
+/**
+ * Confirmation/Reference Object
+ * ----------------------------------------//
+ */
+.confirmation-reference {
+    background-color: @confirmation-reference-bg-color;
+    border-radius: 40px;
+    color: @confirmation-reference-text-color;
+    display: block;
+    font-size: @confirmation-reference-text-size * .625;
+    line-height: 1.2em;
+    padding: @bsu * .75 @bsu @bsu * .75 @bsu * 2;
+    position: relative;
+    text-align: center;
+
+    .icon {
+        background-color: @confirmation-reference-text-color;
+        border-radius: 40px;
+        color: @confirmation-reference-bg-color;
+        font-size: @confirmation-reference-icon-size;
+        left: @hsu;
+        margin-top: -22px;
+        padding: @bsu * .33;
+        position: absolute;
+        top: 50%;
+    }
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @confirmation-reference-text-size;
+        line-height: @confirmation-reference-text-size;
+
+        .icon {
+            left: @bsu * .75;
+        }
+    }
+}
+
+.confirmation-reference + .modal-section__content {
+    margin-top: @bsu;
+}

@@ -20,11 +20,11 @@ h1,h2,h3,h4,h5,h6 {
 /**
  * Anchors
  */
-a {
+a:not([class]) {
     color: @brand-2;
     text-decoration: none;
 }
-a:hover {
+a:not([class]):hover {
     border-bottom: 1px solid fade(@brand-2, 30%);
     padding-bottom: @qsu / 2;
 }

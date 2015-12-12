@@ -1,0 +1,106 @@
+/**
+ * Modal Object
+ * ----------------------------------------//
+ */
+.modal-backdrop.in {
+    opacity: 0.6;
+}
+.modal-dialog {
+    margin-top: @bsu * 2;
+}
+.modal-body {
+    padding: 0;
+}
+
+
+/**
+ * Custom modal close button
+ */
+.modal .close {
+    background-color: #000;
+    border: 3px solid #FFF;
+    border-radius: 40px;
+    box-shadow: 0 1px 10px 2px rgba(0,0,0,0.35);
+    color: #FFF;
+    font-size: @modal-close-size;
+    outline: none;
+    padding: @qsu;
+    position: relative;
+    right: -@qsu + 2px;
+    top: -@qsu + 2px;
+    z-index: 3;
+}
+
+
+/**
+ * Modal section
+ */
+.modal-section {
+    background-color: @brand-1;
+    padding: @bsu @hsu;
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        padding: @bsu;
+    }
+}
+.modal-section:first-of-type {
+    border-radius: 10px 10px 0 0;
+}
+.modal-section:last-of-type {
+    border-radius: 0 0 10px 10px;
+}
+
+
+/**
+ * Modal section modifier
+ */
+.modal-section--white {
+    background-color: #FFF;
+    color: @modal-section-white-text-color;
+}
+
+
+/**
+ * Modal section content container
+ */
+.modal-section__content {
+    font-size: @modal-content-text-size * .75;
+    padding: 0 @hsu;
+
+    .btn-cta {
+        margin-top: @hsu;
+    }
+    
+    .center-block {
+        text-align: center;
+    }
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @modal-content-text-size;
+    }
+}
+
+
+/**
+ * Modal section title
+ */
+.modal-section__title {
+    font-size: @modal-content-title-size * .75;
+    font-weight: @font-thin;
+    margin-bottom: @hsu;
+
+
+    /**
+     * Media query adjustments
+     */
+    @media (min-width: @screen-sm-min) {
+        font-size: @modal-content-title-size;
+    }
+}

@@ -32,7 +32,9 @@ var paths = {
  */
 var jsDependencies = [
     paths.vendor + '/jquery/dist/jquery.min.js',
-    paths.vendor + '/jquery.fitvids/jquery.fitvids.js'
+    paths.vendor + '/jquery.fitvids/jquery.fitvids.js',
+    paths.vendor + '/bootstrap/js/transition.js',
+    paths.vendor + '/bootstrap/js/modal.js'
 ];
 
 
